@@ -3,7 +3,7 @@
  */
 const CONFIG = {
     nome: "Vanderley Melo Express", // Insira o nome do motoboy ou empresa
-    telefone: "5511912173040", // Insira no formato: 55 + DDD + Número (ex: 5511999998888)
+    telefone: "5511999998888", // Insira no formato: 55 + DDD + Número (ex: 5511999998888)
     instagram: "https://instagram.com/SEU_USUARIO", // Insira o link do perfil do Instagram
 
     // Horário de atendimento — usado para o status "Ativo agora" no topo do site
