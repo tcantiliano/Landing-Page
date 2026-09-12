@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motoboy Express - Serviços de Entrega Rápida e Segura</title>
+
+    <!-- Favicon (usa a logo já existente no site) -->
+    <link rel="icon" type="image/jpeg" href="foto-perfil.jpg">
+    <link rel="apple-touch-icon" href="foto-perfil.jpg">
+
+    <!-- Preview ao compartilhar o link (WhatsApp, Instagram, etc.) -->
+    <!-- IMPORTANTE: troque "https://SEU-DOMINIO-AQUI" pela URL final assim que o site estiver publicado na Netlify -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vanderley Melo Express - Motoboy Particular & Entregas Expressas">
+    <meta property="og:description" content="Atendimento imediato, coleta segura e emissão de nota (MEI). Solicite sua entrega agora pelo WhatsApp.">
+    <meta property="og:image" content="https://SEU-DOMINIO-AQUI/foto-perfil.jpg">
+    <meta property="og:url" content="https://SEU-DOMINIO-AQUI">
+    <meta name="description" content="Motoboy particular para entregas expressas em São Paulo. Atendimento imediato, coleta segura, emissão de nota (MEI). Peça pelo WhatsApp.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra de Status Em Tempo Real -->
+    <div class="status-bar status-online" id="status-bar">
+        <span class="status-dot"></span>
+        <span id="status-text">Atendimento Ativo Agora — Resposta rápida no WhatsApp</span>
+    </div>
+
+    <!-- Header com Apresentação do Motoboy -->
+    <header class="header">
+        <div class="profile-avatar">
+            <img src="foto-perfil.jpg" alt="Foto do Motoboy">
+        </div>
+        <h1 id="motoboy-name">Vanderley Melo Spress</h1>
+        <p class="tagline">Motoboy Particular & Entregas Expressas</p>
+        <div class="badges">
+            <span class="badge">⚡ Atendimento Imediato</span>
+            <span class="badge">🛡️ Coleta Segura</span>
+            <span class="badge">📄 Emissão de Nota (MEI)</span>
+        </div>
+
+        <div class="social-links">
+            <a id="social-instagram" href="#" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Seguir no Instagram">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Siga no Instagram
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Card de Ação Principal (Chamar no WhatsApp) -->
+        <div class="cta-card">
+            <h2>Precisa de uma entrega rápida?</h2>
+            <p>Clique abaixo para solicitar o orçamento da sua corrida instantaneamente no WhatsApp.</p>
+            
+            <a id="wa-btn-main" href="#" class="btn-whatsapp">
+                <svg viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                Solicitar Motoboy Agora
+            </a>
+        </div>
+
+        <!-- Galeria de Prova Social / Entregas Realizadas -->
+        <div class="section-title">
+            <span>📸</span> Entregas Concluídas
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="entrega1.jpg" alt="Entrega Realizada 1" loading="lazy">
+                <span class="gallery-tag">Documentos Express</span>
+            </div>
+            <div class="gallery-card">
+                <img src="entrega2.jpg" alt="Entrega Realizada 2" loading="lazy">
+                <span class="gallery-tag">E-commerce / Lojas</span>
+            </div>
+            <div class="gallery-card">
+                <img src="entrega3.jpg" alt="Entrega Realizada 3" loading="lazy">
+                <span class="gallery-tag">Encomenda Delicada</span>
+            </div>
+            <div class="gallery-card">
+                <img src="entrega4.jpg" alt="Entrega Realizada 4" loading="lazy">
+                <span class="gallery-tag">Retirada de valores</span>
+            </div>
+            <div class="gallery-card">
+                <img src="entrega5.jpg" alt="Entrega Realizada 5" loading="lazy">
+                <span class="gallery-tag">Encomenda Delicada</span>
+            </div>
+        </div>
+
+        <!-- Aviso da Resposta Automática (Dica de Ouro) -->
+        <div class="notice-box">
+            <div class="notice-icon">🏍️</div>
+            <div class="notice-text">
+                <h4>Atendimento em Trânsito</h4>
+                <p>Caso eu esteja pilotando no momento, meu WhatsApp enviará uma mensagem automática. Basta deixar os dados da entrega que respondo na primeira parada!</p>
+            </div>
+        </div>
+
+        <!-- Serviços Prestados -->
+        <div class="section-title">
+            <span>📋</span> Serviços Oferecidos
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Entregas Express</h3>
+                <p>Coleta e entrega imediata de documentos, chaves e encomendas urgentes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>Cartórios e Burocracia</h3>
+                <p>Coleta de assinaturas, serviços de malote empresarial e banco.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛍️</div>
+                <h3>E-commerce e Lojas</h3>
+                <p>Entrega no mesmo dia para seus clientes da loja física ou online.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎁</div>
+                <h3>Presentes e Cuidados</h3>
+                <p>Transporte delicado com baú seguro para itens especiais e bolos/doces.</p>
+            </div>
+        </div>
+
+        <!-- Informações Operacionais -->
+        <div class="section-title">
+            <span>📍</span> Informações e Região
+        </div>
+
+        <div class="info-card">
+            <div class="info-item">
+                <div class="info-icon">🗺️</div>
+                <div class="info-content">
+                    <h4>Área de Cobertura</h4>
+                    <p>São Paulo Capital - Interior e Litoral</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">🕒</div>
+                <div class="info-content">
+                    <h4>Horário de Atendimento</h4>
+                    <p>Segunda a Sexta: 08:00 às 20:00<p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">💳</div>
+                <div class="info-content">
+                    <h4>Formas de Pagamento</h4>
+                    <div class="payments">
+                        <span class="pay-badge">❖ Pix</span>
+                        <!-- <span class="pay-badge">💳 Cartão (Maquininha)</span> -->
+                        <!-- <span class="pay-badge">💵 Dinheiro</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Depoimentos de Clientes -->
+        <div class="section-title">
+            <span>⭐</span> O Que Dizem Nossos Clientes
+        </div>
+
+        <div class="testimonials-grid" id="testimonials-grid">
+            <!-- Os cards de depoimento são inseridos aqui pelo script.js -->
+        </div>
+
+        <!-- Formulário de Feedback -->
+        <div class="feedback-card">
+            <h3>Deixe sua Avaliação</h3>
+            <p>Sua opinião ajuda a melhorar o serviço. Conte como foi sua experiência!</p>
+
+            <div class="star-rating" id="star-rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <textarea id="feedback-text" class="feedback-textarea" placeholder="Escreva aqui seu comentário (opcional)" maxlength="300"></textarea>
+
+            <button id="feedback-submit" type="button" class="btn-feedback">
+                Enviar Feedback pelo WhatsApp
+            </button>
+            <p class="feedback-note">Seu feedback é enviado diretamente via WhatsApp, sem armazenamento de dados neste site.</p>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>© <span id="current-year"></span> — Serviço de Motoboy Particular. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <!-- Botão Flutuante Fixo na Tela do Celular -->
+    <div class="floating-bar">
+        <div class="floating-container">
+            <a id="wa-btn-float" href="#" class="btn-whatsapp">
+                <svg viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                Pedir Entrega via WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
